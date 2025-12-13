@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Understanding if Else | Control Flow</h2>
+  <button (click)="handleToggle()">{{ btnText }}</button>
+
+  <div class="section-wrapper">
+    @if(display) {
+    <div style="width: 200px; height: 200px; background-color: red"></div>
+    }
+
+    <!-- Toggle Two divs -->
+
+    @if(display) {
+    <div style="width: 200px; height: 200px; background-color: green"></div>
+    } @else {
+    <div style="width: 200px; height: 200px; background-color: blue"></div>
+    }
+  </div>
+</div>

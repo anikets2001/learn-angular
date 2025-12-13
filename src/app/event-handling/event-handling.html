@@ -1,0 +1,25 @@
+<div class="inputContainer">
+  <h2>Understanding Events in angular</h2>
+
+  <!-- Create a input field and get and set its value -->
+  <label for="name">Name:</label>
+  <input
+    id="name"
+    type="text"
+    value="{{ displayName }}"
+    (input)="handleInputChange($event)"
+    placeholder="Enter Your name"
+  />
+
+  <h3>Your Name is: {{ displayName }}</h3>
+  <button (click)="handleGetName()">Get Name</button>
+  <button (click)="handleSetName('Nikhil')">Set Name</button>
+
+  <hr />
+  <!-- handling input values with template reference variable -->
+  <h3>Email: {{ email }}</h3>
+  <input type="text" value="{{ email }}" placeholder="enter Email" #emailInput />
+  <button (click)="getEmail(emailInput.value)">Get Email</button>
+  <button (click)="setEmail()">Set Email</button>
+
+</div>

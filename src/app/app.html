@@ -1,7 +1,43 @@
-<h1>Hello Angular</h1>      
-<h2>{{name}}</h2>        <!-- interpolation binding -->
-<p>{{x+y}}</p>
-<p>{{userName[0].toUpperCase() + userName.slice(1)}}</p>
+<h1>Hello Angular</h1>
+<h2>{{ name }}</h2>
+<!-- interpolation binding -->
+<p>{{ x + y }}</p>
+<p>{{ userName[0].toUpperCase() + userName.slice(1) }}</p>
+<app-mycomp></app-mycomp>
 <app-login></app-login>
 <app-signup></app-signup>
 <app-profile></app-profile>
+
+<button (click)="handleClick()">Click me!</button>
+
+<p>{{ x }}</p>
+<button (click)="handleIncrement()">Increment</button>
+
+<p>{{ y }}</p>
+<button (click)="handleDecrement()">Decrement</button>
+
+<button (click)="handleEvent($event)">Event</button>
+
+<br />
+<br />
+
+<p>Get and Set Event</p>
+<input type="text" name="name" placeholder="Enter Name" (input)="handleNameInput($event)" />
+
+<br />
+<br />
+<h2>UserName is: {{ displayName }}</h2>
+<button (click)="handleDisplayName()">Show Name</button>
+
+<hr />
+<!-- Get Email by -->
+<input type="email" placeholder="Enter Your Email" #emailField />
+<button (click)="handleEmail(emailField.value)">Get Email</button>
+<p>Your Email is: {{ email }}</p>
+
+
+<hr><hr><br><br>
+
+<event-handling></event-handling>
+<control-flow> </control-flow>
+<router-outlet></router-outlet>
