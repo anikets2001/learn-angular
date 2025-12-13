@@ -3,16 +3,68 @@ import { RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { Signup } from './signup/signup';
 import { Profile } from './profile/profile';
+import { Mycomp } from './mycomp/mycomp';
+import { EventHandling } from './event-handling/event-handling';
+import { ControlFlow } from './control-flow/control-flow';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, Signup, Profile],
+  imports: [RouterOutlet, Login, Signup, Profile, Mycomp, EventHandling, ControlFlow],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
 })
 export class App {
-   name = 'Aniket'                  //property binding
-   x=2;
-   y=3;
-   userName="Peter";
+  name: string = 'Aniket'; //property binding
+  x: any = 2;
+  y: any = 3;
+  userName: string = 'Peter';
+
+  handleClick() {
+    //event binding
+    console.log('Button Clicked');
+    this.anotherFunction();
+    this.y = {};
+  }
+
+  anotherFunction() {
+    console.log('Welcome to Angular');
+    this.name = 'Anik';
+    this.x = true;
+    this.y = false;
+  }
+
+  handleIncrement() {
+    this.x += 1;
+  }
+
+  handleDecrement() {
+    if (this.y > 0) this.y -= 1;
+  }
+
+  handleEvent($event: any) {
+    console.log($event);
+  }
+
+  //  Get and set input value
+
+  displayName = '';
+  showName = '';
+
+  handleNameInput(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    this.showName = value;
+  }
+
+  handleDisplayName() {
+    this.displayName = this.showName;
+    console.log('Display Name is ', this.displayName);
+  }
+
+  // get email
+  email: string = '';
+
+  handleEmail(value: string) {
+    this.email = value;
+    console.log('Email is ', value);
+  }
 }
