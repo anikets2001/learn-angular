@@ -1,0 +1,12 @@
+<div class="container">
+  <div style="height: 1px; width: 100%; border-top: 1px solid gray"></div>
+  <h2>Understanding Effect in Angular</h2>
+
+  <!-- Effects are used to run side effects whenever one or more signal inside it changes -->
+  @for(post of posts(); track post.id){
+  <div class="post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body }}</p>
+  </div>
+  }
+</div>

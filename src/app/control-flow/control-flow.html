@@ -1,4 +1,6 @@
 <div class="container">
+  <div style="width: 100%; border-top: 1px solid gray; height: 1px"></div>
+
   <h2>Understanding if Else | Control Flow</h2>
   <button (click)="handleToggle()">{{ btnText }}</button>
 
@@ -15,4 +17,106 @@
     <div style="width: 200px; height: 200px; background-color: blue"></div>
     }
   </div>
+
+  <div style="width: 100%; border-top: 1px solid gray; height: 1px"></div>
+  <h2>Understanding Switch statement in Angular</h2>
+
+  @switch(color) { @case('red'){
+  <div style="width: 200px; height: 200px; background-color: red"></div>
+  } @case('green'){
+  <div style="width: 200px; height: 200px; background-color: green"></div>
+  } @case('blue'){
+  <div style="width: 200px; height: 200px; background-color: blue"></div>
+  } @default{
+  <div style="width: 200px; height: 200px; background-color: gray"></div>
+  } }
+
+  <button (click)="handleColorChange('red')">Change color to red</button>
+  <button (click)="handleColorChange('green')">Change color to green</button>
+  <button (click)="handleColorChange('blue')">Change color to blue</button>
+  <button (click)="handleColorChange('gray')">Change color to gray</button>
+
+  <div style="width: 100%; border-top: 1px solid gray; height: 1px"></div>
+
+  <!-- Check age group -->
+  <label for="age">Enter Your Age:</label>
+  <input
+    id="age"
+    type="number"
+    placeholder="enter your age"
+    value="{{ age }}"
+    (input)="handleAgeChange($event)"
+  />
+  <h2>Your Age is: {{ age }}</h2>
+
+  @switch(true){ @case(age < 10){
+  <h3>You are a Child.</h3>
+  } @case(age >= 10 && age < 18){
+  <h3>You are a Teenager.</h3>
+  } @case(age >= 18 && age < 60){
+  <h3>You are an Adult.</h3>
+  } @default{
+  <h3>You are a Senior Citizen.</h3>
+  } }
+
+  <div style="width: 100%; border-top: 1px solid gray; height: 1px"></div>
+  <h2>Understanding For Loop in Angular</h2>
+
+  <h2>Users are:</h2>
+  @for(user of users; track user) {
+  <h3>{{ user }}</h3>
+  }
+
+  <div style="width: 100%; border-top: 1px solid gray; height: 1px"></div>
+  <h2>Contextual Variables in for Loop</h2>
+  <!-- Contextual Variables in @for loop -->
+  <!-- 1. $count 2. $index 3. $first 4. $last 5. $even 6. $odd -->
+
+  @for(item of items; track item){
+  <div class="user-card">
+    <h3>{{ $index + 1 }}: {{ item }}</h3>
+  </div>
+  } @empty{
+  <h1>No items found!</h1>
+  }
+
+  <div style="width: 100%; border-top: 1px solid gray; height: 1px"></div>
+
+  @for(item of items; track item){
+  <div class="user-card">
+    <h3>{{ $odd ? 'odd' : 'even' }}: {{ item }}</h3>
+  </div>
+  } @empty{
+  <h1>No items found!</h1>
+  }
+
+  <div style="width: 100%; border-top: 1px solid gray; height: 1px"></div>
+
+  @for(item of items; track item){ @if($first){
+  <div class="user-card">
+    <h3>First User is: {{ item }}</h3>
+  </div>
+  } } @empty{
+  <h1>No items found!</h1>
+  }
+
+  <div style="width: 100%; border-top: 1px solid gray; height: 1px"></div>
+
+  @for(item of items; track item){ @if($last){
+  <div class="user-card">
+    <h3>Last User is: {{ item }}</h3>
+  </div>
+  } } @empty{
+  <h1>No items found!</h1>
+  }
+
+  <div style="width: 100%; border-top: 1px solid gray; height: 1px"></div>
+
+  @for(item of items; track item){ @if($last){
+  <div class="user-card">
+    <h3>Total users are: {{ $count }}</h3>
+  </div>
+  } } @empty{
+  <h1>No items found!</h1>
+  }
 </div>
