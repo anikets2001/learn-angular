@@ -6,10 +6,13 @@ import { Profile } from './profile/profile';
 import { Mycomp } from './mycomp/mycomp';
 import { EventHandling } from './event-handling/event-handling';
 import { ControlFlow } from './control-flow/control-flow';
+import { Signals } from './signals/signals';
+import { Effect } from './effect/effect';
+import { TwoWayBinding } from './two-way-binding/two-way-binding';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, Signup, Profile, Mycomp, EventHandling, ControlFlow],
+  imports: [RouterOutlet, Login, Signup, Profile, Mycomp, EventHandling, ControlFlow, Signals, Effect, TwoWayBinding],
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
 })
