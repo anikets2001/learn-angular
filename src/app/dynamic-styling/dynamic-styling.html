@@ -1,0 +1,21 @@
+<div class="container">
+  <div style="width: 100%; height: 1px; border-top: 1px solid gray"></div>
+  <h2>Understanding Dynamic Styling</h2>
+
+  <div
+    style="display: flex; align-items: center; justify-content: center"
+    [style.background-color]="bgColor"
+    [style.width]="width"
+    [style.color]="color"
+  >
+    <p>This tag's styling is Dynamic.</p>
+  </div>
+
+  <button (click)="handleBgChange('yellow')">Change Background Yellow</button>
+  <button (click)="handleBgChange('black')">Change Background to Black</button>
+
+  <br><br>
+
+  <div [style.background-color]="bgColor" [style.color]="color">Toggle Theme</div>
+  <button (click)="handleThemeChange()">Toggle Theme</button>
+</div>

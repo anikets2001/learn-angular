@@ -9,10 +9,12 @@ import { ControlFlow } from './control-flow/control-flow';
 import { Signals } from './signals/signals';
 import { Effect } from './effect/effect';
 import { TwoWayBinding } from './two-way-binding/two-way-binding';
+import { DynamicStyling } from './dynamic-styling/dynamic-styling';
+import { Directive } from './directive/directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, Signup, Profile, Mycomp, EventHandling, ControlFlow, Signals, Effect, TwoWayBinding],
+  imports: [RouterOutlet, Login, Signup, Profile, Mycomp, EventHandling, ControlFlow, Signals, Effect, TwoWayBinding, DynamicStyling, Directive],
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
 })
